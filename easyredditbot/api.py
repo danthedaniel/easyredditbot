@@ -20,7 +20,7 @@ from praw import Reddit
 
 
 class HookBase:
-    """Abstract base class for all hook classes."""
+    """Base class for all hook classes."""
 
     previous_ids = set()  # All previously seen items
     wrapped_funcs = {}  # All wrapped callback functions
@@ -59,7 +59,7 @@ class HookBase:
             try:
                 cls.run_once()
                 delay = 1
-            except KeyboardInterrupt as e:
+            except (KeyboardInterrupt, ValueError) as e:
                 print('Reddit read loop ended.')
                 return
             except Exception as e:

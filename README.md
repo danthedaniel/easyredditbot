@@ -27,7 +27,7 @@ set_reddit(
 
 
 @AllCommentsHook
-def print_comment(comment):
+def reply_to_comment(comment):
     if 'easyredditbot' in comment.body:
         comment.reply('Hello, world!')
 
