@@ -82,7 +82,7 @@ class HookBase:
         """
         for item in items:
             # Only yield if this item has not yet been seen
-            if item.id not in cls.previous_ids:
+            if item.fullname not in cls.previous_ids:
                 yield item
 
         # Add all new ids to the set of previously viewed ids
